@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Flex Properties Example</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }  
+
+    .flex-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; 
+      align-items: stretch;          
+      flex-wrap: wrap;               
+      gap: 24px;
+      padding: 40px;
+      max-width: 1100px;
+      margin: 30px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .flex-child {
+      flex: 1 1 200px;
+      min-width: 180px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 40px 20px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .flex-child:nth-child(1) {
+      background: linear-gradient(135deg, #ff6a88 40%, #ff99ac 100%);
+      flex-grow: 2;   
+      flex-shrink: 1; 
+      flex-basis: 250px; 
+      order: 2;     
+    }
+    .flex-child:nth-child(2) {
+      background: linear-gradient(135deg, #42e695 40%, #3bb2b8 100%);
+      flex-grow: 1;
+      flex-shrink: 2;
+      flex-basis: 220px;
+      order: 3;
+    }
+    .flex-child:nth-child(3) {
+      background: linear-gradient(135deg, #4776e6 40%, #8e54e9 100%);
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 200px;
+      order: 1;          
+      align-self: flex-start; 
+    }
+    .flex-child:nth-child(4) {
+      background: linear-gradient(135deg, #896436 40%, #f4e49d 100%);
+      flex-grow: 1;
+      flex-shrink: 0;   
+      flex-basis: 300px;
+      order: 4;
+      align-self: flex-end; 
+    }
+    .flex-child:hover {
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 900px) {
+      .flex-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .flex-child {
+        flex: 1 1 auto;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="flex-child">Flex Child 1<br><span style="font-size:0.9em;">flex-grow:2, order:2</span></div>
+    <div class="flex-child">Flex Child 2<br><span style="font-size:0.9em;">flex-shrink:2, order:3</span></div>
+    <div class="flex-child">Flex Child 3<br><span style="font-size:0.9em;">align-self:start, order:1</span></div>
+    <div class="flex-child">Flex Child 4<br><span style="font-size:0.9em;">flex-shrink:0, align-self:end</span></div>
+  </div>
+</body>
+</html>
